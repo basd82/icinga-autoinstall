@@ -51,7 +51,7 @@ HOSTNAME=`hostname`
 echo "Importent setup details save them in safe place!!!!"
 echo ""
 echo "Database:         icinga2_director user: icinga2_director_db password: $WWDIRECTORDB"
-echo "go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://$HOSTNAME to complete setup in the Icinga2 gui"
+echo "go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://$HOSTNAME/icingaweb2 to complete setup in the Icinga2 gui"
 
 
 
