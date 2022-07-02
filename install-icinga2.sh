@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WWIDODB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
-WWDIRECTORDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
+WWICINGAWEB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
 echo "Add ondrej/php repostory"
