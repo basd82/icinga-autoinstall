@@ -21,7 +21,7 @@ echo "deb-src [arch=amd64 signed-by=/usr/share/keyrings/Icinga.gpg] https://pack
 echo "Install apache2, mysql server, php 8.0, icinga2 and monitoring-plugins icinga2-ido-mysql"
 echo "icinga2-ido-mysql       icinga2-ido-mysql/enable        boolean true"| debconf-set-selections
 echo "icinga2-ido-mysql icinga2-ido-mysql/dbconfig-install boolean false"| debconf-set-selections
-apt install apache2 mysql-server php8.0 php8.0-gd php8.0-mbstring php8.0-mysqlnd php8.0-curl php8.0-xml php8.0-cli php8.0-soap php8.0-intl php8.0-xmlrpc php8.0-zip  php8.0-common php8.0-opcache php8.0-gmp php8.0-imagick php8.0-pgsql icinga2 monitoring-plugins icinga2-ido-mysql -y
+apt install apache2 mysql-server php8.0 php8.0-gd php8.0-mbstring php8.0-mysqlnd php8.0-curl php8.0-xml php8.0-cli php8.0-soap php8.0-intl php8.0-xmlrpc php8.0-zip  php8.0-common php8.0-opcache php8.0-gmp php8.0-imagick php8.0-pgsql php8.0-ldap icinga2 monitoring-plugins icinga2-ido-mysql -y
 
 rm $TMPFILE -f
 cat <<<"
