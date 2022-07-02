@@ -11,7 +11,7 @@ Script is without warenty
 
 run this command and installation process will start:
 ```
-curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/main/install-director.sh -o install-director.sh;bash install-director.sh;rm install-director.sh
+curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/main/install-icinga2.sh -o install-icinga2.sh;bash install-icinga2.sh;rm install-icinga2.sh
 ```
 script wil ends with information so you complete the setup with gui in the webinterface:
 Safe this in a safe place it wil only display once:
