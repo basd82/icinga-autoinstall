@@ -91,4 +91,4 @@ echo "Setup token:      $SETUPTOKEN"
 echo "API user:         $APIUSER"
 echo "API password:     $APIWW"
 echo "";
-echo "go to http://server-ipadres/icingaweb2/setup or http://fqdn/icingaweb2/setup http://$HOSTNAME to complete setup"
+echo "go to http://server-ipadres/icingaweb2/setup or http://fqdn/icingaweb2/setup http://$HOSTNAME/icingaweb2/setup to complete setup"
