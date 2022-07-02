@@ -42,6 +42,14 @@ Importent setup details save them in safe place!!!!
 Database:         icinga2_director user: icinga2_director_db password:
 go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://some.domain.tld to complete setup in the Icinga2 gui
 ```
+## ussage Client install script
+the is installs icinga2 agent/client, after install you need to run the agent deploy script
+
+run this command and installation process will start:
+```
+curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/main/install-client.sh -o install-client.sh;bash install-client.sh;rm install-client.sh
+```
+
 
 # Security Advice
 * It is advised to setup the web server so that https is mandatory. So that all traffic to the web interface is encrypted
