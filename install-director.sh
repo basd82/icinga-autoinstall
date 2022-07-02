@@ -1,5 +1,7 @@
 #!/bin/bash
 TMPFILE=/tmp/create.sql
+WWDIRECTORDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
+
 
 MODULE_NAME=incubator
 MODULE_VERSION=v0.17.0
