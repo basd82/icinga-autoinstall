@@ -93,7 +93,7 @@ HOSTNAME=`hostname`
 echo "Importent setup details save them in safe place!!!!"
 echo ""
 echo "Database:         icinga_ido user: $USERINODB password: $WWIDODB"
-echo "Database:         icingaweb user: $USERWEBDB password: $WWICINGAWEB"
+echo "Database:         icingaweb user: $USERWEBDB password: $WWWEBDB"
 echo "Setup token:      $SETUPTOKEN"
 echo "API user:         $APIUSER"
 echo "API password:     $APIWW"
