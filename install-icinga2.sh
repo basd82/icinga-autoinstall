@@ -7,11 +7,11 @@ WWWEBDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
+echo "install needed packages for installation"
+apt install -y install apt-transport-https wget gnupg debconf-utils
 echo "Add ondrej/php repostory"
 add-apt-repository ppa:ondrej/php -y
 echo "Add icinga repo and repo key and needed tools voor install"
-apt-get update
-apt-get -y install apt-transport-https wget gnupg debconf-utils
 rm -f /usr/share/keyrings/Icinga.gpg
 curl https://packages.icinga.com/icinga.key | gpg --dearmour -o /usr/share/keyrings/Icinga.gpg
 
@@ -24,6 +24,7 @@ echo "deb-src [arch=amd64 signed-by=/usr/share/keyrings/Icinga.gpg] https://pack
 echo "Install apache2, mariadb server, php 8.0, icinga2 and monitoring-plugins icinga2-ido-mysql"
 echo "icinga2-ido-mysql       icinga2-ido-mysql/enable        boolean true"| debconf-set-selections
 echo "icinga2-ido-mysql icinga2-ido-mysql/dbconfig-install boolean false"| debconf-set-selections
+apt update
 apt install apache2 mariadb-server mariadb-client mariadb-common php8.0 php8.0-ldap php8.0-gd php8.0-mbstring php8.0-mysqlnd php8.0-curl php8.0-xml php8.0-cli php8.0-soap php8.0-intl php8.0-xmlrpc php8.0-zip  php8.0-common php8.0-opcache php8.0-gmp php8.0-imagick php8.0-pgsql icinga2 monitoring-plugins icinga2-ido-mysql -y
 
 
