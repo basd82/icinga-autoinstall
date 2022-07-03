@@ -11,7 +11,7 @@ Script is without warenty
 
 run this command and installation process will start:
 ```
-curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/main/install-director.sh -o install-director.sh;bash install-director.sh;rm install-director.sh
+curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/mariadb/install-director.sh -o install-director.sh;bash install-director.sh;rm install-director.sh
 ```
 script wil ends with information so you complete the setup with gui in the webinterface:
 Safe this in a safe place it wil only display once:
@@ -32,7 +32,7 @@ The script install director and incubator modules, the incubator module is requi
 The script also wil create the required database for the director..
 run this command and installation process will start:
 ```
-curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/main/install-director.sh -o install-director.sh;bash install-director.sh;rm install-director.sh
+curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/mariadb/install-director.sh -o install-director.sh;bash install-director.sh;rm install-director.sh
 ```
 script wil ends with information so you complete the setup with gui in the webinterface:
 Safe this in a safe place it wil only display once:
