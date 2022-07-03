@@ -27,7 +27,8 @@ echo "icinga2-ido-mysql       icinga2-ido-mysql/enable        boolean true"| deb
 echo "icinga2-ido-mysql icinga2-ido-mysql/dbconfig-install boolean false"| debconf-set-selections
 apt update
 apt install apache2 mariadb-server mariadb-client mariadb-common php8.0 php8.0-ldap php8.0-gd php8.0-mbstring php8.0-mysqlnd php8.0-curl php8.0-xml php8.0-cli php8.0-soap php8.0-intl php8.0-xmlrpc php8.0-zip  php8.0-common php8.0-opcache php8.0-gmp php8.0-imagick php8.0-pgsql icinga2 monitoring-plugins icinga2-ido-mysql -y
-
+echo "set php 8.0 as default for cli"
+update-alternatives --set php /usr/bin/php8.0
 
 rm $TMPFILE -f
 cat <<<"
