@@ -7,6 +7,7 @@ WWWEBDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
+echo "Start installation Icinga2"
 echo "install needed packages for installation"
 apt install -y apt-transport-https wget gnupg debconf-utils
 echo "Add ondrej/php repostory"
