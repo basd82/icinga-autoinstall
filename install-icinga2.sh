@@ -82,7 +82,6 @@ rm $TMPFILE -f
 
 echo "Securing Mariadb root accoutn"
 echo "Remove anayoumus users and test database set root password en set root to unix authentication"
-rm $TMPFILE -f
 cat <<<"DELETE FROM mysql.user WHERE User='';
 DROP DATABASE IF EXISTS \`test\`;
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
