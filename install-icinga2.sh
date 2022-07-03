@@ -86,7 +86,7 @@ rm $TMPFILE -f
 cat <<<"DELETE FROM mysql.user WHERE User='';
 DROP DATABASE IF EXISTS \`test\`;
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
-FLUSH PRIVILEGES;" >> | mysql
+FLUSH PRIVILEGES;" >>> | mysql
 
 
 HOSTNAME=`hostname`
