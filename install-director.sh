@@ -1,5 +1,8 @@
 #!/bin/bash
 TMPFILE=/tmp/create.sql
+USERDIRECTORDB='icinga2_director_db'
+WWDIRECTORDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
+
 
 MODULE_NAME=incubator
 MODULE_VERSION=v0.17.0
@@ -31,11 +34,8 @@ rm $TMPFILE -f
 cat <<<"
 DROP DATABASE IF EXISTS \`icinga2_director\`;
 create database icinga2_director;
-CREATE USER IF NOT EXISTS \`icinga2_director_db\`@\`localhost\`;
-ALTER USER \`icinga2_director_db\`@\`localhost\` IDENTIFIED WITH 'caching_sha2_password' BY '$WWDIRECTORDB' REQUIRE NONE PASSWORD EXPIRE DEFAULT ACCOUNT UNLOCK PASSWORD HISTORY DEFAULT PASSWORD REUSE INTERVAL DEFAULT PASSWORD REQUIRE CURRENT DEFAULT;
-GRANT ALL PRIVILEGES ON \`icinga2_director\`.* TO \`icinga2_director_db\`@\`localhost\`;
-GRANT USAGE ON *.* TO \`icinga2_director_db\`@\`localhost\`;
-FLUSH PRIVILEGES;" >>$TMPFILE
+GRANT ALL ON icinga2_director.* TO '$USERDIRECTORDB'@'localhost' IDENTIFIED BY '$WWDIRECTORDB';
+FLUSH PRIVILEGES;" >$TMPFILE
 cat $TMPFILE |mysql
 rm $TMPFILE -f
 
@@ -49,7 +49,4 @@ HOSTNAME=`hostname`
 echo "Importent setup details save them in safe place!!!!"
 echo ""
 echo "Database:         icinga2_director user: icinga2_director_db password: $WWDIRECTORDB"
-echo "go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://$HOSTNAME to complete setup in the Icinga2 gui"
-
-
-
+echo "go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://$HOSTNAME/icingaweb2 to complete setup in the Icinga2 gui"
