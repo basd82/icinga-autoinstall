@@ -8,7 +8,7 @@ WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
 echo "install needed packages for installation"
-apt install -y install apt-transport-https wget gnupg debconf-utils
+apt install -y apt-transport-https wget gnupg debconf-utils
 echo "Add ondrej/php repostory"
 add-apt-repository ppa:ondrej/php -y
 echo "Add icinga repo and repo key and needed tools voor install"
