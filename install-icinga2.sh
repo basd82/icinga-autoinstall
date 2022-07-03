@@ -88,7 +88,12 @@ cat <<<"DELETE FROM mysql.user WHERE User='';
 DROP DATABASE IF EXISTS \`test\`;
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
 FLUSH PRIVILEGES;"| mysql
-
+echo ""
+echo "Generate salt for icinga"
+echo "const TicketSalt = \"$(openssl rand -base64 30)\"" >> /etc/icinga2/constants.conf
+echo ""
+echo ""
+echo ""
 
 HOSTNAME=`hostname`
 echo "Importent setup details save them in safe place!!!!"
