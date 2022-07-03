@@ -3,7 +3,7 @@
 USERINODB='icinga_ido_db'
 USERWEBDB='icingaweb_db'
 WWIDODB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
-WWICINGAWEB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
+WWWEBDB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
@@ -86,7 +86,7 @@ rm $TMPFILE -f
 cat <<<"DELETE FROM mysql.user WHERE User='';
 DROP DATABASE IF EXISTS \`test\`;
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
-FLUSH PRIVILEGES;" >>> | mysql
+FLUSH PRIVILEGES;"| mysql
 
 
 HOSTNAME=`hostname`
