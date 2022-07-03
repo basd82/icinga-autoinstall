@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USERINODB ='icinga_ido_db'
-USERWEBDB ='icingaweb_db'
+USERINODB='icinga_ido_db'
+USERWEBDB='icingaweb_db'
 WWIDODB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWICINGAWEB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
