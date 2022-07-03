@@ -47,6 +47,14 @@ go to http://server-ipadres/icingaweb2 or http://fqdn/icingaweb2 http://some.dom
 * It is advised to setup the web server so that https is mandatory. So that all traffic to the web interface is encrypted
 * It adivsed to set an root password for mysql
 
+## ussage client install script
+Script to install a client/agent or sattelite server with basic icinga
+
+```
+curl https://raw.githubusercontent.com/basd82/icinga-autoinstall/mariadb/install-client.sh -o install-client.sh;bash install-client.sh;rm install-client.sh
+```
+
+
 #### resources used 
 
 * U used the documentation Icinga [^1][^2][^3][^4] but adjusted it to my situation to get it working.
