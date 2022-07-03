@@ -4,6 +4,7 @@ USERINODB ='icinga_ido_db'
 USERWEBDB ='icingaweb_db'
 WWIDODB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 WWICINGAWEB=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
+WWMYSQLROOT=`</dev/urandom tr -dc 'A-Za-z0-9*_+=' | head -c32`
 TMPFILE=/tmp/create.sql
 
 echo "Add ondrej/php repostory"
@@ -24,6 +25,7 @@ echo "Install apache2, mariadb server, php 8.0, icinga2 and monitoring-plugins i
 echo "icinga2-ido-mysql       icinga2-ido-mysql/enable        boolean true"| debconf-set-selections
 echo "icinga2-ido-mysql icinga2-ido-mysql/dbconfig-install boolean false"| debconf-set-selections
 apt install apache2 mariadb-server mariadb-client mariadb-common php8.0 php8.0-gd php8.0-mbstring php8.0-mysqlnd php8.0-curl php8.0-xml php8.0-cli php8.0-soap php8.0-intl php8.0-xmlrpc php8.0-zip  php8.0-common php8.0-opcache php8.0-gmp php8.0-imagick php8.0-pgsql icinga2 monitoring-plugins icinga2-ido-mysql -y
+
 
 rm $TMPFILE -f
 cat <<<"
@@ -77,6 +79,15 @@ echo "showing icinga2 service status"
 systemctl status icinga2
 echo "removing tempfile"
 rm $TMPFILE -f
+
+echo "Securing Mariadb root accoutn"
+echo "Remove anayoumus users and test database set root password en set root to unix authentication"
+rm $TMPFILE -f
+cat <<<"DELETE FROM mysql.user WHERE User='';
+DROP DATABASE IF EXISTS \`test\`;
+ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
+FLUSH PRIVILEGES;" >> | mysql
+
 
 HOSTNAME=`hostname`
 echo "Importent setup details save them in safe place!!!!"
