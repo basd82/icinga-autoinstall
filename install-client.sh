@@ -1,6 +1,6 @@
 echo "Start installation Icinga2 agent"
 echo "install needed packages for installation"
-apt install -y apt-transport-https wget gnupg debconf-utils
+apt install -y apt-transport-https wget gnupg
 echo "Add icinga repo and repo key and needed tools voor install"
 rm -f /usr/share/keyrings/Icinga.gpg
 curl https://packages.icinga.com/icinga.key | gpg --dearmour -o /usr/share/keyrings/Icinga.gpg
